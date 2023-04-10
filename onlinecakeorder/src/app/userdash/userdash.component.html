@@ -1,0 +1,26 @@
+<div class="banner">
+  <app-header></app-header>
+  <div class="container">
+      <div *ngIf="products!=null">
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+              <div class="col" *ngFor="let ele of products">
+                  <div class="card h-65" style="width: 20rem;">
+                      <img class="card-img-top" src="{{ele.productImage}}" alt="Card image cap"
+                          style="width: 280px;height: 400px; padding: 5px 30px;">
+                      <div class="card-body">
+                          <h5 class="card-title">{{ele.productName}}</h5>
+                         
+                          <h3>Price : {{ele.price}}</h3>
+                      </div>
+                      <div class="card-body">
+                          <button class="btn btn-warning" (click)="addtocart(ele.id)">AddCart</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div *ngIf="products==null" class="empty">
+          <h1>Cart List is Empty</h1>
+      </div>
+  </div>
+</div>

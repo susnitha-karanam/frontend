@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="box-1">
+        <h1 style="text-align: center; color: rgba(57, 53, 56, 0.909);">Products</h1>
+        <hr>
+        <div class="cardcontent" style="margin: 0 20px;">
+            <table class="table text-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">productImage</th>
+                        <th scope="col">productName</th>
+                        <th scope="col">price</th>
+                        <th scope="col">Update</th>
+                        <th scope="col">Delete</th>
+
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let ele of products">
+                        <th scope="row">{{ele.id}}</th>
+                        <td><img src="{{ele.productImage}}" alt="" width="150px" height="150px"></td>
+                        <td>{{ele.productName}}</td>
+                        <td><input type="text" placeholder="{{ele.price}} " #price></td>
+                        <td><button class="btn btn-primary"
+                                (click)="updateProductPrice(ele.id,price.value)">Update</button></td>
+                        <td><button class="btn btn-danger"
+                                (click)="deleteProductById(ele.id)">Delete</button></td>
+                                
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+

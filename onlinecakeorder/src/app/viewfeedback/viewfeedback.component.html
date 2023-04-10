@@ -1,0 +1,31 @@
+<div class="box-1">
+    <h1 style="text-align: center; color: rgba(57, 53, 56, 0.909);">FeedBacks</h1>
+    <hr>
+    <div class="cardcontent" style="margin: 0 20px;">
+        <table class="table text-dark">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">feedback</th>
+                    <th scope="col">orderCreatedAt</th>
+                    <th scope="col">total</th>
+                    <th scope="col">userid</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ele of orders">
+                    <th scope="row">{{ele.id}}</th>
+                    <td>{{ele.feedback}}</td>
+                    <td>{{ele.orderCreatedAt}}</td>
+                    <td>{{ele.total}}</td>
+                    <td>{{ele.userid}}</td>
+
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+

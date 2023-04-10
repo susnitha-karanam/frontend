@@ -1,0 +1,31 @@
+<div class="box-4">
+    <h1 style="text-align: center; color: rgba(57, 53, 56, 0.909);">ADD PRODUCT TO DATABASE</h1>
+    <table class="table text-dark">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">ImageUrl</th>
+                <th scope="col">price</th>
+
+                <th scope="col">Save</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">#</th>
+                <td><input type="text" placeholder="Enter Product Name" #gname></td>
+                <td><input type="text" placeholder="Enter Imageurl" #gimage></td>
+                <td><input type="text" placeholder="Enter product Price" #gcreated></td>
+
+                <td><button class="btn btn-primary"
+                        (click)="savegame(gname.value,gimage.value,gcreated.value)">Save</button>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</div>

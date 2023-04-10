@@ -1,0 +1,32 @@
+<div class="banner">
+    <app-header></app-header>
+    <div class="container">
+        <h1>DELIVERY SECTION :</h1>
+        <div class="content" *ngFor="let ele of orders">
+            <h1>OrderID : {{ele.id}}</h1>
+            <h2>{{ele.deliveryStatus}}</h2>
+            <h5>{{ele.orderCreatedAt}}</h5>
+            <table class="table text-light">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">ProductName</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let p of ele.products">
+                        <th scope="row">{{p.id}}</th>
+                        <td>{{p.productName}}</td>
+                        <td>{{p.price}}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <h3>Amount Paid :{{ele.total}}</h3>
+            <button class="btn btn-danger d-center" *ngIf="ele.deliveryStatus == 'Order Shipped'"
+                (click)="delivery(ele.id)">Delivered</button>
+             <h4>Feedback: {{ele.feedback}}</h4>
+        </div>
+    </div>
+</div>

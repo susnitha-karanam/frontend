@@ -1,0 +1,111 @@
+<body>
+
+    <div class="container">
+        <div class="title">Registration</div>
+        <form #formref="ngForm" (ngSubmit)="register()">
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">UserName</span>
+                    <input type="text" class="form-control" name="username" placeholder="Enter your name"
+                        [(ngModel)]="user.name" #username="ngModel" required
+                        [class.is-invalid]="username.invalid && username.touched">
+                    <small class="text-danger" [class.d-none]="username.valid || username.untouched">*username is
+                        Required</small>
+                </div>
+                <div class="input-box">
+                    <span class="details">Email</span>
+                    <input type="text" class="form-control" name="email" placeholder="Enter your email"
+                        [(ngModel)]="user.email" #email="ngModel" required pattern="[A-Za-z0-9]+@[a-z]+\.[a-z]{2,3}"
+                        [class.is-invalid]="email.invalid && email.touched">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                        else.</small>
+                    <div *ngIf="email.errors && (email.invalid && email.touched)">
+                        <small class="text-danger" *ngIf="email.errors['required']">*Email is Required</small>
+                        <small class="text-danger" *ngIf="email.errors['pattern']">*Enter the valid Email id </small>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <span class="details">Password</span>
+                    <input type="text" class="form-control" name="password" placeholder="Enter your password"
+                        [(ngModel)]="user.password" #password="ngModel" required
+                        [class.is-invalid]="password.invalid && password.touched">
+                    <small class="text-danger" [class.d-none]="password.valid || password.untouched">*password is
+                        Required</small>
+                </div>
+                <!-- useraddress -->
+                <div class="input-box">
+                    <span class="details">Phone</span>
+                    <input type="number" class="form-control" name="phone" placeholder="Enter your phone"
+                        [(ngModel)]="useraddress.contactnumber" #phone="ngModel" required
+                        [class.is-invalid]="phone.invalid && phone.touched">
+                    <small class="text-danger" [class.d-none]="phone.valid || phone.untouched">*phone is
+                        Required</small>
+                </div>
+                <div class="input-box">
+                    <span class="details">Address1</span>
+                    <input type="text" class="form-control" name="Address1" placeholder="Enter your Address1"
+                        [(ngModel)]="useraddress.address1" #Address1="ngModel" required
+                        [class.is-invalid]="Address1.invalid && Address1.touched">
+                    <small class="text-danger" [class.d-none]="Address1.valid || Address1.untouched">*Address1 is
+                        Required</small>
+                </div>
+                <div class="input-box">
+                    <span class="details">Address2</span>
+                    <input type="text" class="form-control" name="Address2" placeholder="Enter your Address2"
+                        [(ngModel)]="useraddress.address2" #Address2="ngModel" required
+                        [class.is-invalid]="Address2.invalid && Address2.touched">
+                    <small class="text-danger" [class.d-none]="Address2.valid || Address2.untouched">*Address2 is
+                        Required</small>
+                </div>
+                <div class="input-box">
+                    <span class="details">landmark</span>
+                    <input type="text" class="form-control" name="landmark" placeholder="Enter your landmark"
+                        [(ngModel)]="useraddress.landmark" #landmark="ngModel" required
+                        [class.is-invalid]="landmark.invalid && landmark.touched">
+                    <small class="text-danger" [class.d-none]="landmark.valid || landmark.untouched">*landmark is
+                        Required</small>
+                </div>
+                <div class="input-box">
+                    <span class="details">pincode</span>
+                    <input type="text" class="form-control" name="pincode" placeholder="Enter your pincode"
+                        [(ngModel)]="useraddress.pincode" #pincode="ngModel" required
+                        [class.is-invalid]="pincode.invalid && pincode.touched">
+                    <small class="text-danger" [class.d-none]="pincode.valid || pincode.untouched">*pincode is
+                        Required</small>
+                </div>
+                <div class="input-box">
+                    <span class="details">district</span>
+                    <input type="text" class="form-control" name="district" placeholder="Enter your district"
+                        [(ngModel)]="useraddress.district" #district="ngModel" required
+                        [class.is-invalid]="district.invalid && district.touched">
+                    <small class="text-danger" [class.d-none]="district.valid || district.untouched">*district is
+                        Required</small>
+                </div>
+                <div class="input-box">
+                    <span class="details">state</span>
+                    <input type="text" class="form-control" name="state" placeholder="Enter your state"
+                        [(ngModel)]="useraddress.state" #state="ngModel" required
+                        [class.is-invalid]="state.invalid && state.touched">
+                    <small class="text-danger" [class.d-none]="state.valid || state.untouched">*state is
+                        Required</small>
+                </div>
+                <div class="input-box">
+                    <span class="details">country</span>
+                    <input type="text" class="form-control" name="country" placeholder="Enter your country"
+                        [(ngModel)]="useraddress.country" #country="ngModel" required
+                        [class.is-invalid]="country.invalid && country.touched">
+                    <small class="text-danger" [class.d-none]="country.valid || country.untouched">*country is
+                        Required</small>
+                </div>
+
+
+            </div>
+            <div class="button">
+                <input type="submit" [disabled]="formref.invalid" value="Register"> Already a user? <a
+                    routerLink="../login">Login</a>
+            </div>
+
+        </form>
+
+    </div>
+</body>
